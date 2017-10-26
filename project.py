@@ -38,7 +38,7 @@ with open('index.csv', 'a') as csv_file:
 		entropy=0
         words=para.getText().encode('UTF-8').split()
         for ele in frequency_list:
-            print ele
+            #print ele
             entropy=entropy-(hashmap[ele]*math.log(hashmap[ele]))
             print entropy
         print "hi"
