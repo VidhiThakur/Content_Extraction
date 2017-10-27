@@ -12,6 +12,7 @@ page = urllib2.urlopen(wiki)
 soup = BeautifulSoup(page,"lxml")
 stop_words = set(stopwords.words('english'))
 all_p=soup.find_all("p")
+final_hash={}
 with open('index.csv', 'a') as csv_file:
 	writer = csv.writer(csv_file)
 	for para in all_p:
@@ -50,3 +51,8 @@ with open('index.csv', 'a') as csv_file:
         print "hi"
         print entropy
         '''
+	final_hash[entropy]=para;
+for keys,values in final_hash.items():
+	print (keys)
+	print(values)
+	print "\n"
